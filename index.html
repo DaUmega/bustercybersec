@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buster Cybersecurity Ltd.</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EKZ7MS4HVX"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-EKZ7MS4HVX');
+</script>
+
+<body class="bg-gray-900 text-white">
+
+    <!-- Header -->
+    <header class="bg-gray-800 p-5 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold">Buster Cybersecurity Ltd.</h1>
+            <nav class="hidden md:flex space-x-5">
+                <a href="#services" class="hover:text-blue-400 transition duration-300">Services</a>
+                <a href="#about" class="hover:text-blue-400 transition duration-300">About Us</a>
+                <a href="#contact" class="hover:text-blue-400 transition duration-300">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="h-screen bg-cover bg-center relative" style="background-image: url('cybersecurity-background.jpg');">
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="flex items-center justify-center h-full relative z-10">
+            <div class="text-center px-5 md:px-10">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-5">Protect Your Business with Offensive Security</h2>
+                <p class="text-lg md:text-xl mb-8 font-semibold">OSCP Certified Pentesting, Red Teaming, Phishing, and more tailored to your business needs.</p>
+                <p class="text-lg md:text-xl mb-8">Proudly Canadian owned and operated, based in Alberta. We strive to stimulate the local economy and encourage the growth of local talent.</p>
+                <a href="#services" class="bg-blue-500 text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-blue-600 transition duration-300">Explore Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-900">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-10">Our Services</h2>
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Service Cards -->
+                <div class="bg-gray-800 p-6 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg">
+                    <h3 class="text-xl font-semibold mb-3">Penetration Testing</h3>
+                    <p>Identify weaknesses in your systems before attackers do with targeted penetration tests designed to reveal vulnerabilities in your infrastructure.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg">
+                    <h3 class="text-xl font-semibold mb-3">Red Teaming</h3>
+                    <p>Simulate real-world attacks on your infrastructure to assess your defenses under pressure, providing a comprehensive evaluation of your security posture.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg">
+                    <h3 class="text-xl font-semibold mb-3">Phishing Campaigns</h3>
+                    <p>Test and educate your employees with controlled, customized phishing attacks, enhancing their ability to recognize and respond to real threats.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg">
+                    <h3 class="text-xl font-semibold mb-3">Consulting</h3>
+                    <p>Gain expert guidance on implementing secure practices within your organization, tailored to your unique business needs and industry standards.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg">
+                    <h3 class="text-xl font-semibold mb-3">Vulnerability Assessments</h3>
+                    <p>Identify and prioritize vulnerabilities in your network through systematic evaluations, enabling you to enhance your security posture effectively.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg">
+                    <h3 class="text-xl font-semibold mb-3">Other Services</h3>
+                    <p>Beyond traditional security testing, we offer expertise in DevSecOps adoption, secure software development, and code reviews to uncover potential vulnerabilities in your applications.</p>
+                </div>
+            </div>
+        </div>
+    </section>    
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-700">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">About Buster Cybersecurity</h2>
+            <p class="max-w-2xl mx-auto mb-4">We specialize in offensive cybersecurity solutions designed to preemptively identify and mitigate risks. Our team combines technical expertise with a deep understanding of evolving threats to ensure your organization stays protected against today’s cyber challenges.</p>
+            <p class="mt-6 font-semibold">Proudly OSCP Certified, our professionals bring proven skills and knowledge to every engagement.</p>
+            <p class="mt-6">As a Canadian company based in Alberta, we are committed to stimulating the local economy and fostering the growth of local talent within the cybersecurity industry.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+            <p class="max-w-xl mx-auto mb-10">Contact us to discuss how we can help secure your organization.</p>
+            <!-- Contact Form -->
+            <div class="space-y-5 max-w-lg mx-auto">
+                <input type="text" id="name" placeholder="Full Name" class="w-full p-3 rounded bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-blue-500 focus:outline-none" required>
+                <input type="email" id="email" placeholder="Email" class="w-full p-3 rounded bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-blue-500 focus:outline-none" required>
+                <textarea id="message" placeholder="Message" rows="4" class="w-full p-3 rounded bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-blue-500 focus:outline-none" required></textarea>
+                <button onclick="sendEmail()" class="w-full bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600 transition duration-300">Send Message</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 p-5 text-center text-sm">
+        <p>&copy; 2024 Buster Cybersecurity Ltd. All Rights Reserved.</p>
+        <script src="main.js"></script>
+    </footer>
+
+</body>
+</html>
