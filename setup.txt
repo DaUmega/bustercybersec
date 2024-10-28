@@ -1,0 +1,17 @@
+sudo apt update && sudo apt full-upgrade -y
+sudo apt install -y net-tools zip apache2
+
+# For oracle, run the following for SSH, assume private instance IP is 10.0.0.250
+# check ifconfig and change 'ens3' as needed
+sudo ip rule add table 1777 from 10.0.0.250
+sudo ip route add table 1777 to 10.0.0.0/24 dev ens3
+sudo ip route add table 1777 default via 10.0.0.1
+
+./webupdate.sh
+
+# Get self-renewal SSL using certbot https://certbot.eff.org/instructions?ws=apache&os=ubuntufocal
+
+#DNS zone set up, was needed for Namecheap VPS
+#For Oracle, Network > DNS Management > Create new zone, manage records, add A Record with VPS IP
+#change ip in dnszone.sh before running
+./dnszone.sh
