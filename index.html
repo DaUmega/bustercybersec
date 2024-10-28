@@ -21,22 +21,39 @@
     <!-- Header -->
     <header class="bg-gray-800 p-5 sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-3xl font-bold">Buster Cybersecurity Ltd.</h1>
-            <nav class="hidden md:flex space-x-5">
+            <div class="flex items-center space-x-3">
+                <img src="resources/buster_logo_square.png" alt="Buster Cybersecurity Logo" class="h-12">
+                <h1 class="text-3xl font-bold">Buster Cybersecurity Ltd.</h1>
+            </div>
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-toggle" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+            <nav id="navbar" class="hidden md:flex space-x-5">
                 <a href="#services" class="hover:text-blue-400 transition duration-300">Services</a>
                 <a href="#about" class="hover:text-blue-400 transition duration-300">About Us</a>
                 <a href="#contact" class="hover:text-blue-400 transition duration-300">Contact</a>
             </nav>
         </div>
-    </header>
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <nav class="flex flex-col space-y-2 mt-2">
+                <a href="#services" class="block p-2 hover:text-blue-400 transition duration-300">Services</a>
+                <a href="#about" class="block p-2 hover:text-blue-400 transition duration-300">About Us</a>
+                <a href="#contact" class="block p-2 hover:text-blue-400 transition duration-300">Contact</a>
+            </nav>
+        </div>
+    </header>    
 
     <!-- Hero Section -->
-    <section class="h-screen bg-cover bg-center relative" style="background-image: url('cybersecurity-background.jpg');">
+    <section class="h-screen bg-cover bg-center relative" style="background-image: url('resources/background.jpg');">
         <div class="absolute inset-0 bg-black opacity-50"></div>
         <div class="flex items-center justify-center h-full relative z-10">
             <div class="text-center px-5 md:px-10">
                 <h2 class="text-4xl md:text-5xl font-extrabold mb-5">Protect Your Business with Offensive Security</h2>
-                <p class="text-lg md:text-xl mb-8 font-semibold">OSCP Certified Pentesting, Red Teaming, Phishing, and more tailored to your business needs.</p>
+                <p class="text-lg md:text-xl mb-8 font-semibold">OSCP Certified Pentesting, Red Teaming, Phishing Campaign, and more tailored to your business needs.</p>
                 <p class="text-lg md:text-xl mb-8">Proudly Canadian owned and operated, based in Alberta. We strive to stimulate the local economy and encourage the growth of local talent.</p>
                 <a href="#services" class="bg-blue-500 text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-blue-600 transition duration-300">Explore Our Services</a>
             </div>
@@ -69,9 +86,13 @@
                     <h3 class="text-xl font-semibold mb-3">Vulnerability Assessments</h3>
                     <p>Identify and prioritize vulnerabilities in your network through systematic evaluations, enabling you to enhance your security posture effectively.</p>
                 </div>
+                <!-- Sample Report Card -->
                 <div class="bg-gray-800 p-6 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg">
-                    <h3 class="text-xl font-semibold mb-3">Other Services</h3>
-                    <p>Beyond traditional security testing, we offer expertise in DevSecOps adoption, secure software development, and code reviews to uncover potential vulnerabilities in your applications.</p>
+                    <h3 class="text-xl font-semibold mb-3">Sample Penetration Test Report</h3>
+                    <p class="mb-4">Get a glimpse of our reporting format and insights by viewing a sample penetration test report.</p>
+                    <a href="resources/sample.pdf" target="_blank" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-600 transition duration-300">
+                        View Sample Report
+                    </a>
                 </div>
             </div>
         </div>

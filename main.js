@@ -13,4 +13,32 @@ function sendEmail() {
   
     window.location.href = `mailto:your-email@buster-cybersecurity.com?subject=${encodeURIComponent(subject)}&body=${body}`;
 }
-  
+
+// Toggle mobile menu visibility
+document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenu.classList.toggle('hidden');
+});
+
+// Close mobile menu when clicking on a menu option
+const mobileLinks = document.querySelectorAll('#mobile-menu a');
+mobileLinks.forEach(link => {
+    link.addEventListener('click', function() {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.add('hidden');
+    });
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute("href").substring(1);
+        const targetElement = document.getElementById(targetId);
+        const offset = 80; // Adjust based on your header's height
+
+        window.scrollTo({
+            top: targetElement.offsetTop - offset,
+            behavior: "smooth"
+        });
+    });
+});
