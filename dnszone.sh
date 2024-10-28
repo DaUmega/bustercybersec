@@ -8,7 +8,7 @@ apt-get install -y bind9 bind9utils bind9-doc
 
 domain_name='bustercybersec.com'
 public_ip='129.213.125.193'
-private_ip='10.0.0.250'
+private_ip='10.0.0.69'
 
 lines_to_add=(
 	'include "/etc/bind/named.conf.options";'
