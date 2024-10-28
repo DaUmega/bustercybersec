@@ -14,8 +14,8 @@ sudo mv /etc/ssh/sshd_config.temp /etc/ssh/sshd_config
 #For namecheap, advanced DNS > Add nameserver > add VPS IP to those ns1 and ns2
 #Then go to domain > nameservers > Custom > add ns1.domain and ns2.domain
 
-# Run 'command -v iptables' then change '/usr/sbin/iptables' as needed
-/usr/sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT
-/usr/sbin/iptables -I INPUT -p tcp --dport 443 -j ACCEPT
-/usr/sbin/iptables -I INPUT -p udp --dport 53 -j ACCEPT
+# Set up so that after every reboot all necessary ports stay open
+crontab -e
+@reboot /root/bustercybersec/ports.sh
+
 # Get self-renewal SSL using certbot https://certbot.eff.org/instructions?ws=apache&os=ubuntufocal
