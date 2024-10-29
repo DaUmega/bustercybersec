@@ -11,7 +11,7 @@ function sendEmail() {
     const subject = `New message from ${name}`;
     const body = `Name: ${name}%0DEmail: ${email}%0D%0DMessage:%0D${encodeURIComponent(message)}`;
   
-    window.location.href = `mailto:your-email@buster-cybersecurity.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    window.location.href = `mailto:info@bustercybersec.com?subject=${encodeURIComponent(subject)}&body=${body}`;
 }
 
 // Toggle mobile menu visibility
