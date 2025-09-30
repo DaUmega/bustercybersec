@@ -1,133 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buster Cybersecurity Ltd.</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buster Cybersecurity Ltd.</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 
-<!-- Google tag (gtag.js) -->
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-EKZ7MS4HVX"></script>
 <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-EKZ7MS4HVX');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-EKZ7MS4HVX");
 </script>
 
-<body class="bg-gray-900 text-white">
+<body class="bg-gray-900 text-white font-sans">
 
-    <!-- Header -->
-    <header class="bg-gray-800 p-5 sticky top-0 z-50">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <img src="resources/buster_logo_square.png" alt="Buster Cybersecurity Logo" class="h-12">
-                <h1 class="text-3xl font-bold">Buster Cybersecurity Ltd.</h1>
-            </div>
-            <!-- Mobile menu button -->
-            <button id="mobile-menu-toggle" class="md:hidden text-white focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </button>
-            <nav id="navbar" class="hidden md:flex space-x-5">
-                <a href="#services" class="hover:text-blue-400 transition duration-300">Services</a>
-                <a href="#about" class="hover:text-blue-400 transition duration-300">About Us</a>
-                <a href="#contact" class="hover:text-blue-400 transition duration-300">Contact</a>
-            </nav>
+  <!-- Header -->
+  <header class="bg-gray-800/90 backdrop-blur p-5 sticky top-0 z-50 shadow-md">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="resources/buster_logo_square.png" alt="Buster Cybersecurity Logo" class="h-12 rounded">
+        <h1 class="text-2xl md:text-3xl font-bold tracking-tight">Buster Cybersecurity Ltd.</h1>
+      </div>
+      <!-- Mobile menu button -->
+      <button id="mobile-menu-toggle" class="md:hidden text-white focus:outline-none">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </button>
+      <nav id="navbar" class="hidden md:flex space-x-6 font-medium">
+        <a href="#services" class="hover:text-cyan-400 transition">Services</a>
+        <a href="#about" class="hover:text-cyan-400 transition">About</a>
+        <a href="#software" class="hover:text-cyan-400 transition">Software</a>
+        <a href="#contact" class="hover:text-cyan-400 transition">Contact</a>
+      </nav>
+    </div>
+    <!-- Mobile Nav -->
+    <div id="mobile-menu" class="hidden md:hidden">
+      <nav class="flex flex-col space-y-2 mt-2">
+        <a href="#services" class="p-2 hover:text-cyan-400">Services</a>
+        <a href="#about" class="p-2 hover:text-cyan-400">About</a>
+        <a href="#software" class="p-2 hover:text-cyan-400">Software</a>
+        <a href="#contact" class="p-2 hover:text-cyan-400">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="h-screen bg-cover bg-center relative" style="background-image: url('resources/background.jpg');">
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <div class="flex items-center justify-center h-full relative z-10">
+      <div class="text-center px-6 md:px-12">
+        <h2 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+          Offensive Security for a Safer Future
+        </h2>
+        <p class="text-lg md:text-xl mb-6 font-medium max-w-2xl mx-auto">
+          OSCP Certified Penetration Testing, Red Teaming, Phishing Campaigns, and tailored solutions to safeguard your business.
+        </p>
+        <a href="#services" class="bg-gradient-to-r from-blue-500 to-cyan-500 px-6 py-3 rounded-lg text-lg font-semibold hover:from-blue-600 hover:to-cyan-600 transition">
+          Explore Services
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="py-20 bg-gray-900">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-12">Core Services</h2>
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div class="bg-gray-800 p-6 rounded-lg hover:scale-105 hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-3">Penetration Testing</h3>
+          <p>Uncover vulnerabilities before attackers do with detailed testing of your infrastructure and applications.</p>
         </div>
-        <!-- Mobile Navigation -->
-        <div id="mobile-menu" class="hidden md:hidden">
-            <nav class="flex flex-col space-y-2 mt-2">
-                <a href="#services" class="block p-2 hover:text-blue-400 transition duration-300">Services</a>
-                <a href="#about" class="block p-2 hover:text-blue-400 transition duration-300">About Us</a>
-                <a href="#contact" class="block p-2 hover:text-blue-400 transition duration-300">Contact</a>
-            </nav>
+        <div class="bg-gray-800 p-6 rounded-lg hover:scale-105 hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-3">Red Teaming</h3>
+          <p>Simulated real-world attacks to measure resilience and evaluate your defenses under realistic threat scenarios.</p>
         </div>
-    </header>    
-
-    <!-- Hero Section -->
-    <section class="h-screen bg-cover bg-center relative" style="background-image: url('resources/background.jpg');">
-        <div class="absolute inset-0 bg-black opacity-50"></div>
-        <div class="flex items-center justify-center h-full relative z-10">
-            <div class="text-center px-5 md:px-10">
-                <h2 class="text-4xl md:text-5xl font-extrabold mb-5">Protect Your Business with Offensive Security</h2>
-                <p class="text-lg md:text-xl mb-8 font-semibold">OSCP Certified Pentesting, Red Teaming, Phishing Campaign, and more tailored to your business needs.</p>
-                <p class="text-lg md:text-xl mb-8">Proudly Canadian owned and operated, based in Alberta. We strive to stimulate the local economy and encourage the growth of local talent.</p>
-                <a href="#services" class="bg-blue-500 text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-blue-600 transition duration-300">Explore Our Services</a>
-            </div>
+        <div class="bg-gray-800 p-6 rounded-lg hover:scale-105 hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-3">Phishing Campaigns</h3>
+          <p>Educate and test employees with controlled phishing simulations, improving awareness and response readiness.</p>
         </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-20 bg-gray-900">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-10">Our Services</h2>
-            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                <!-- Service Cards -->
-                <div class="bg-gray-800 p-6 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg">
-                    <h3 class="text-xl font-semibold mb-3">Penetration Testing</h3>
-                    <p>Identify weaknesses in your systems before attackers do with targeted penetration tests designed to reveal vulnerabilities in your infrastructure.</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg">
-                    <h3 class="text-xl font-semibold mb-3">Red Teaming</h3>
-                    <p>Simulate real-world attacks on your infrastructure to assess your defenses under pressure, providing a comprehensive evaluation of your security posture.</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg">
-                    <h3 class="text-xl font-semibold mb-3">Phishing Campaigns</h3>
-                    <p>Test and educate your employees with controlled, customized phishing attacks, enhancing their ability to recognize and respond to real threats.</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg">
-                    <h3 class="text-xl font-semibold mb-3">Consulting</h3>
-                    <p>Gain expert guidance on implementing secure practices within your organization, tailored to your unique business needs and industry standards.</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg">
-                    <h3 class="text-xl font-semibold mb-3">Vulnerability Assessments</h3>
-                    <p>Identify and prioritize vulnerabilities in your network through systematic evaluations, enabling you to enhance your security posture effectively.</p>
-                </div>
-                <!-- Sample Report Card -->
-                <div class="bg-gray-800 p-6 rounded-lg transition-transform transform hover:scale-105 hover:shadow-lg">
-                    <h3 class="text-xl font-semibold mb-3">Sample Penetration Test Report</h3>
-                    <p class="mb-4">Get a glimpse of our reporting format and insights by viewing a sample penetration test report.</p>
-                    <a href="resources/sample.pdf" target="_blank" class="inline-block bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-600 transition duration-300">
-                        View Sample Report
-                    </a>
-                </div>
-            </div>
+        <div class="bg-gray-800 p-6 rounded-lg hover:scale-105 hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-3">Consulting</h3>
+          <p>Actionable, expert advice on strengthening your cybersecurity posture with industry best practices.</p>
         </div>
-    </section>    
-
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-700">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-6">About Buster Cybersecurity</h2>
-            <p class="max-w-2xl mx-auto mb-4">We specialize in offensive cybersecurity solutions designed to preemptively identify and mitigate risks. Our team combines technical expertise with a deep understanding of evolving threats to ensure your organization stays protected against today’s cyber challenges.</p>
-            <p class="mt-6 font-semibold">Proudly OSCP Certified, our professionals bring proven skills and knowledge to every engagement.</p>
-            <p class="mt-6">As a Canadian company based in Alberta, we are committed to stimulating the local economy and fostering the growth of local talent within the cybersecurity industry.</p>
+        <div class="bg-gray-800 p-6 rounded-lg hover:scale-105 hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-3">Vulnerability Assessments</h3>
+          <p>Comprehensive reviews to prioritize risks, helping you secure systems effectively and efficiently.</p>
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-900">
-        <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
-            <p class="max-w-xl mx-auto mb-10">Contact us to discuss how we can help secure your organization.</p>
-            <!-- Contact Form -->
-            <div class="space-y-5 max-w-lg mx-auto">
-                <input type="text" id="name" placeholder="Full Name" class="w-full p-3 rounded bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-blue-500 focus:outline-none" required>
-                <input type="email" id="email" placeholder="Email" class="w-full p-3 rounded bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-blue-500 focus:outline-none" required>
-                <textarea id="message" placeholder="Message" rows="4" class="w-full p-3 rounded bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-blue-500 focus:outline-none" required></textarea>
-                <button onclick="sendEmail()" class="w-full bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600 transition duration-300">Send Message</button>
-            </div>
+        <div class="bg-gray-800 p-6 rounded-lg hover:scale-105 hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-3">Sample Report</h3>
+          <p class="mb-4">Preview our reporting format with a real-world example of a penetration test report.</p>
+          <a href="resources/sample.pdf" target="_blank" class="inline-block bg-blue-500 px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-600 transition">
+            View Report
+          </a>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 p-5 text-center text-sm">
-        <p>&copy; 2024 Buster Cybersecurity Ltd. All Rights Reserved.</p>
-        <script src="main.js"></script>
-    </footer>
+  <!-- About -->
+  <section id="about" class="py-20 bg-gray-700">
+    <div class="container mx-auto text-center max-w-3xl">
+      <h2 class="text-3xl font-bold mb-6">About Us</h2>
+      <p class="mb-6">
+        We specialize in offensive cybersecurity designed to proactively identify and mitigate risks. Our OSCP-certified experts combine technical depth with real-world knowledge to protect against evolving threats.
+      </p>
+      <p class="font-semibold">Proudly based in Alberta, Canada. Supporting local businesses and talent growth.</p>
+    </div>
+  </section>
 
+  <!-- Software Development -->
+  <section id="software" class="py-20 bg-gray-900">
+    <div class="container mx-auto text-center max-w-4xl">
+      <h2 class="text-3xl font-bold mb-8">Custom Software Development</h2>
+      <p class="mb-6 text-lg">
+        In addition to offensive cybersecurity, we offer freelance full-stack development services. With experience in modern web apps, APIs, and automation tools, we can design and build solutions tailored to your unique needs.
+      </p>
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="bg-gray-800 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold mb-3">Web Apps</h3>
+          <p>Modern, scalable applications built with security and performance in mind.</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold mb-3">APIs</h3>
+          <p>Robust APIs that integrate seamlessly into your business systems and workflows.</p>
+        </div>
+        <div class="bg-gray-800 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold mb-3">Automation</h3>
+          <p>Custom automation tools to streamline operations and eliminate repetitive tasks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 bg-gray-800">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+      <p class="max-w-xl mx-auto mb-10">
+        Reach out to discuss how we can strengthen your cybersecurity or build custom software solutions.
+      </p>
+      <div class="space-y-5 max-w-lg mx-auto">
+        <input type="text" id="name" placeholder="Full Name"
+          class="w-full p-3 rounded bg-gray-900 border border-gray-700 focus:ring-2 focus:ring-cyan-500 focus:outline-none">
+        <input type="email" id="email" placeholder="Email"
+          class="w-full p-3 rounded bg-gray-900 border border-gray-700 focus:ring-2 focus:ring-cyan-500 focus:outline-none">
+        <textarea id="message" placeholder="Message" rows="4"
+          class="w-full p-3 rounded bg-gray-900 border border-gray-700 focus:ring-2 focus:ring-cyan-500 focus:outline-none"></textarea>
+        <button id="send-btn" class="w-full bg-gradient-to-r from-blue-500 to-cyan-500 p-3 rounded-lg hover:from-blue-600 hover:to-cyan-600 transition">
+          Send Message
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 border-t border-gray-700 p-5 text-center text-sm text-gray-400">
+    <p>&copy; 2025 Buster Cybersecurity Ltd. All Rights Reserved.</p>
+  </footer>
+
+  <script src="main.js"></script>
 </body>
 </html>
