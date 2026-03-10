@@ -1,78 +1,59 @@
-// Mobile menu toggle
-const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
-const mobileMenu = document.getElementById("mobile-menu");
-
-if (mobileMenuToggle) {
-  mobileMenuToggle.addEventListener("click", () => {
-    mobileMenu.classList.toggle("hidden");
-    if (!mobileMenu.classList.contains("hidden")) {
-      mobileMenu.classList.add("animate-slide-down");
-    } else {
-      mobileMenu.classList.remove("animate-slide-down");
-    }
-  });
-}
-
-// Close mobile menu on link click
-document.querySelectorAll("#mobile-menu a").forEach(link => {
-  link.addEventListener("click", () => {
-    mobileMenu.classList.add("hidden");
-  });
+// Mobile menu
+const nav = document.getElementById("nav");
+document.getElementById("menu-btn").addEventListener("click", () => {
+  nav.classList.toggle("open");
+  if (nav.classList.contains("open")) nav.classList.add("slide-down");
 });
+document.querySelectorAll("#nav a").forEach(a => a.addEventListener("click", () => nav.classList.remove("open")));
 
-// Smooth scroll with offset
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function (e) {
-    const targetId = this.getAttribute("href").substring(1);
-    const targetElement = document.getElementById(targetId);
-    if (!targetElement) return;
-
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener("click", e => {
+    const t = document.getElementById(a.getAttribute("href").slice(1));
+    if (!t) return;
     e.preventDefault();
-    const offset = 80;
-    const top = targetElement.getBoundingClientRect().top + window.scrollY - offset;
-
-    window.scrollTo({ top, behavior: "smooth" });
+    window.scrollTo({ top: t.offsetTop - 80, behavior: "smooth" });
   });
 });
 
-// Toast notification
-function showToast(message, isError = false) {
-  const toast = document.createElement("div");
-  toast.textContent = message;
-  toast.className = `fixed bottom-5 right-5 px-4 py-2 rounded shadow-lg z-50 text-white 
-    ${isError ? "bg-red-600" : "bg-green-600"} animate-fade-in-out`;
-  document.body.appendChild(toast);
+// Active nav
+const navLinks = document.querySelectorAll("#nav a[href^='#']");
+new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) navLinks.forEach(a =>
+      a.classList.toggle("active", a.getAttribute("href") === `#${e.target.id}`)
+    );
+  });
+}, { threshold: 0.4 }).observe(...document.querySelectorAll("section[id]"));
 
-  setTimeout(() => toast.remove(), 3000);
+// Scroll reveal
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add("visible"); ro.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+document.querySelectorAll(".reveal").forEach(el => ro.observe(el));
+
+// Toast
+function toast(msg, err) {
+  const t = Object.assign(document.createElement("div"), { textContent: msg, className: "toast" });
+  Object.assign(t.style, {
+    position:"fixed", bottom:"1.5rem", right:"1.5rem", padding:".7rem 1.1rem",
+    borderRadius:".6rem", color:"#fff", fontFamily:"'JetBrains Mono',monospace",
+    fontSize:".8rem", zIndex:"9999", boxShadow:"0 8px 28px rgba(0,0,0,.4)",
+    background: err ? "#450a0a" : "#0d1829",
+    border: `1px solid ${err ? "#dc2626" : "rgba(6,182,212,.4)"}`
+  });
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), 3000);
 }
 
-// Email send handler
-function sendEmail() {
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
+// Contact
+document.getElementById("send-btn").addEventListener("click", () => {
+  const name    = document.getElementById("name").value.trim();
+  const email   = document.getElementById("email").value.trim();
   const message = document.getElementById("message").value.trim();
-
-  if (!name || !email || !message) {
-    showToast("Please fill in all fields.", true);
-    return;
-  }
-
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(email)) {
-    showToast("Enter a valid email address.", true);
-    return;
-  }
-
-  const subject = `New message from ${name}`;
+  if (!name || !email || !message) return toast("Please fill in all fields.", true);
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return toast("Enter a valid email.", true);
   const body = `Name: ${name}%0DEmail: ${email}%0D%0DMessage:%0D${encodeURIComponent(message)}`;
-
-  window.location.href = `mailto:info@bustercybersec.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-
-  showToast("Opening email client...");
-}
-
-// Attach email button handler
-const sendBtn = document.getElementById("send-btn");
-if (sendBtn) {
-  sendBtn.addEventListener("click", sendEmail);
-}
+  window.location.href = `mailto:info@bustercybersec.com?subject=${encodeURIComponent(`Message from ${name}`)}&body=${body}`;
+  toast("Opening email client...");
+});
