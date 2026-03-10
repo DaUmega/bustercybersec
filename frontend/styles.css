@@ -146,6 +146,7 @@ footer p   { font-size: .75rem; color: var(--muted); }
   }
   nav.open   { display: flex; }
   nav a      { width: 100%; padding: .8rem 1.5rem; }
+  .nav-cta   { border: none; background: none; padding: .8rem 1.5rem; border-radius: 0; }
   .about-grid { grid-template-columns: 1fr; }
 }
 
