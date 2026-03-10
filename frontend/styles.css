@@ -67,7 +67,8 @@ nav a:hover, nav a.active { color: var(--cyan); }
 .hero-inner { max-width: 72rem; margin: 0 auto; width: 100%; }
 .eyebrow { display: flex; align-items: center; gap: .6rem; font-size: .75rem; letter-spacing: .12em; color: var(--cyan); margin-bottom: 1.25rem; }
 .dot     { width: 8px; height: 8px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 8px var(--cyan); flex-shrink: 0; animation: pulse 2s ease-in-out infinite; }
-#hero h1 { font-size: clamp(3.5rem, 9vw, 7rem); font-weight: 800; color: #fff; margin-bottom: 1.25rem; }
+#hero h1 { font-size: clamp(2.5rem, 8vw, 7rem); font-weight: 800; color: #fff; margin-bottom: 1.25rem; }
+#hero     { overflow-x: hidden; }
 .accent  { background: linear-gradient(135deg,var(--cyan),var(--blue),#818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 #hero .sub  { margin-bottom: 2rem; font-size: .95rem; }
 .actions { display: flex; flex-wrap: wrap; gap: 1rem; }
